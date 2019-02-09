@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:friday_morning/presentation/heart_icons.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -43,15 +44,18 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Align(
         alignment: AlignmentDirectional.topStart,
-        child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Icon(Icons.healing),
-                  _spacing(5.0),
-                  configureBoldText('Suvely'),
-                ])),
+        child: Container(
+          height: 40,
+          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Icon(Heart.heart, size: 16),
+              _spacing(7.0),
+              configureBoldText('Suvely'),
+            ],
+          ),
+        ),
       ),
     );
   }
