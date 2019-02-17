@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:friday_morning/Home/home_bloc.dart';
 import 'package:friday_morning/Home/home_provider.dart';
 import 'package:friday_morning/presentation/heart_icons.dart';
+import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,10 +11,9 @@ class HomePage extends StatelessWidget {
       homeBloc: HomeBloc(),
       child: Stack(
         children: <Widget>[
-          _backgroundImage(),
           _loverInfoWidget(),
           _coupleDetailInfoWidget(),
-          _floatingActionButton(),
+          _floatingActionButton(context),
         ],
       ),
     );
@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/default_bg.jpg'),
+          image: AssetImage(''),
           fit: BoxFit.fill,
         ),
       ),
@@ -65,18 +65,43 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _floatingActionButton() {
+  void _showActionSheet(BuildContext context) {
+    var actionSheet = CupertinoActionSheet(
+      title: Text('Test Title'),
+      message: Text('Test Message'),
+      actions: <Widget>[
+        CupertinoActionSheetAction(
+          child: Text('Do Action'),
+          onPressed: () {
+            print('Do Action');
+          },
+        )
+      ],
+      cancelButton: CupertinoActionSheetAction(
+        child: Text('Cancel'),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+    );
+    showCupertinoModalPopup(
+      context: context,
+      builder: (BuildContext context) => actionSheet,
+    );
+  }
+
+  Widget _floatingActionButton(BuildContext context) {
     return Align(
       alignment: Alignment(0.9, 0.95),
       child: FloatingActionButton(
         backgroundColor: Colors.redAccent,
         child: Icon(Icons.add),
-        onPressed: _floatingButtonTapped,
+        onPressed: () {
+          _showActionSheet(context);
+        },
       ),
     );
   }
-
-  void _floatingButtonTapped() {}
 
   Widget _coupleDetailInfoWidget() {
     Text configureMainText(String text) {
