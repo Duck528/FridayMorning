@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
       homeBloc: HomeBloc(),
       child: Stack(
         children: <Widget>[
+          _backgroundImage(),
           _loverInfoWidget(),
           _coupleDetailInfoWidget(),
           _floatingActionButton(context),
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(''),
+          image: AssetImage('assets/default_bg.jpg'),
           fit: BoxFit.fill,
         ),
       ),
