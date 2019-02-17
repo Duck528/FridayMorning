@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:friday_morning/Feed/feed.dart';
 import 'Home/home.dart';
 
-// void main() => runApp(FridayMorningApp());
-void main() => runApp(MyApp());
+void main() => runApp(FridayMorningApp());
 
 class FridayMorningApp extends StatelessWidget {
   @override
