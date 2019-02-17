@@ -1,14 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-final dummySnapshot = [
-  {"name": "Filip", "votes": 15},
-  {"name": "Abraham", "votes": 14},
-  {"name": "Richard", "votes": 11},
-  {"name": "Ike", "votes": 10},
-  {"name": "Justin", "votes": 1},
-];
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
         return _buildList(context, snapshot.data.documents);
       },
     );
-    //  return _buildList(context, dummySnapshot);
   }
 
   Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
