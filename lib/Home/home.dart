@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:friday_morning/Home/home_bloc.dart';
+import 'package:friday_morning/Home/home_provider.dart';
 import 'package:friday_morning/presentation/heart_icons.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        _backgroundImage(),
-        _loverInfoWidget(),
-        _coupleDetailInfoWidget(),
-        _floatingActionButton(),
-      ],
+    return HomeProvider(
+      homeBloc: HomeBloc(),
+      child: Stack(
+        children: <Widget>[
+          _backgroundImage(),
+          _loverInfoWidget(),
+          _coupleDetailInfoWidget(),
+          _floatingActionButton(),
+        ],
+      ),
     );
   }
 
