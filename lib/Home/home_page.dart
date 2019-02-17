@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:friday_morning/Home/home_bloc.dart';
-import 'package:friday_morning/Home/home_provider.dart';
+import 'package:friday_morning/Home/home_page_provider.dart';
 import 'package:friday_morning/presentation/heart_icons.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return HomeProvider(
+    return HomePageProvider(
       homeBloc: HomeBloc(),
       child: Stack(
         children: <Widget>[
@@ -66,24 +66,22 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  CupertinoActionSheetAction _configureAction(String text, VoidCallback callback) {
+    var action = CupertinoActionSheetAction(
+      onPressed: callback,
+      child: Text(text),
+    );
+    return action;
+  }
+
   void _showActionSheet(BuildContext context) {
     var actionSheet = CupertinoActionSheet(
-      title: Text('Test Title'),
-      message: Text('Test Message'),
       actions: <Widget>[
-        CupertinoActionSheetAction(
-          child: Text('Do Action'),
-          onPressed: () {
-            print('Do Action');
-          },
-        )
+        _configureAction('배경화면 변경', () {}),
       ],
-      cancelButton: CupertinoActionSheetAction(
-        child: Text('Cancel'),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
+      cancelButton: _configureAction('취소', () {
+        Navigator.pop(context);
+      })
     );
     showCupertinoModalPopup(
       context: context,
