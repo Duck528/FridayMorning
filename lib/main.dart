@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:friday_morning/SignIn/signin_page.dart';
+import 'package:friday_morning/Welcome/welcome_page.dart';
 import 'Home/home_page.dart';
 
 void main() => runApp(FridayMorningApp());
@@ -10,7 +10,7 @@ class FridayMorningApp extends StatelessWidget {
     return MaterialApp(
       title: 'Friday Morning',
       theme: ThemeData.dark(),
-      home: SignInPage(),
+      home: WelcomePage(),
     );
   }
 }
