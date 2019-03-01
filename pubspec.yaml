@@ -36,8 +36,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
-  # fonts:
     
   # To add assets to your application, add an assets section, like this:
   assets:
@@ -68,3 +66,11 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
+
+  fonts:
+    - family: NotoSans
+      fonts:
+        - asset: fonts/NotoSans-Bold.ttf
+        - asset: fonts/NotoSans-Medium.ttf
+        - asset: fonts/NotoSans-Regular.ttf
+        - asset: fonts/NotoSans-SemiBold.ttf
