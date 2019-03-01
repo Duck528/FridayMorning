@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:friday_morning/Home/home_bloc.dart';
 import 'package:friday_morning/Home/home_page_provider.dart';
-import 'package:friday_morning/presentation/heart_icons.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomePage extends StatelessWidget {
@@ -56,7 +55,6 @@ class HomePage extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Icon(Heart.heart, size: 16),
               _spacing(7.0),
               configureBoldText('Suvely'),
             ],

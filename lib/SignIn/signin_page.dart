@@ -145,6 +145,10 @@ class _NestStepWidget extends StatelessWidget {
       ],
     );
   }
+
+  Widget _configureStepIndicator() { 
+    
+  }
 }
 
 Container _spacing(double height) {
