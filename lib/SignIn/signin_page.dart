@@ -126,6 +126,7 @@ class _NestStepWidget extends StatelessWidget {
 
   Widget _configureNextButton() {
     return FlatButton(
+      highlightColor: Colors.white70,
       onPressed: () {
         print('clicked');
       },
