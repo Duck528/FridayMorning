@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:friday_morning/SignIn/signin_page_provider.dart';
 import 'package:friday_morning/Util/fonts.dart';
+import 'package:friday_morning/Util/spacing.dart';
 import 'package:friday_morning/Welcome/welcome_page.dart';
 
 class SignInPage extends StatefulWidget {
@@ -49,11 +50,11 @@ class _WelcomeWidgetState extends State<_WelcomeWidget> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           _LogoWidget(),
-          _spacing(20.1),
+          spacing(20.1),
           _configureMainTitle('ID'),
-          _spacing(6),
+          spacing(6),
           _configureSubTitle('Pick id for display you on friday morning.'),
-          _spacing(15),
+          spacing(15),
           _configureInputText('Nickname')
         ],
       ),
@@ -158,11 +159,4 @@ class _NestStepWidget extends StatelessWidget {
   }
 
   Widget _configureStepIndicator() {}
-}
-
-Container _spacing(double height) {
-  return Container(
-    height: height,
-    color: Colors.transparent,
-  );
 }
