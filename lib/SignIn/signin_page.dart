@@ -119,7 +119,7 @@ class _NestStepWidget extends StatelessWidget {
             width: 200,
             child: Container(
               color: Colors.black,
-              child: _configureNextButton(),
+              child: _configureNextButton(context),
             ),
           )
         ],
@@ -127,11 +127,11 @@ class _NestStepWidget extends StatelessWidget {
     );
   }
 
-  Widget _configureNextButton() {
+  Widget _configureNextButton(BuildContext context) {
     return FlatButton(
       highlightColor: Colors.white70,
       onPressed: () {
-        print('clicked');
+        
       },
       child: Stack(children: <Widget>[
         Positioned(
