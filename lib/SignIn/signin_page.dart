@@ -19,7 +19,7 @@ class _SignInPageState extends State<SignInPage> {
             children: <Widget>[
               Align(
                 alignment: AlignmentDirectional.center,
-                child: _WelcomeWidget(),
+                child: _SignInWidget(),
               ),
               Positioned(
                 child: _NestStepWidget(),
@@ -35,12 +35,12 @@ class _SignInPageState extends State<SignInPage> {
   }
 }
 
-class _WelcomeWidget extends StatefulWidget {
+class _SignInWidget extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _WelcomeWidgetState();
+  State<StatefulWidget> createState() => _SignInWidgetState();
 }
 
-class _WelcomeWidgetState extends State<_WelcomeWidget> {
+class _SignInWidgetState extends State<_SignInWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
