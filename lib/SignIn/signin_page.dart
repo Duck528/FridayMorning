@@ -41,11 +41,13 @@ class _SignInWidget extends StatefulWidget {
 }
 
 class _SignInWidgetState extends State<_SignInWidget> {
+  bool _idEntered = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
-      height: 260,
+      height: 334,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -55,7 +57,8 @@ class _SignInWidgetState extends State<_SignInWidget> {
           spacing(6),
           _configureSubTitle('Pick id for display you on friday morning.'),
           spacing(15),
-          _configureInputText('Nickname')
+          _configureInputID('Nickname'),
+          _idEntered ? _configureInputPW('Enter Password', context) : Container()
         ],
       ),
     );
@@ -76,15 +79,40 @@ class _SignInWidgetState extends State<_SignInWidget> {
     );
   }
 
-  Widget _configureInputText(String placehold) {
+  Widget _configureInputID(String placehold) {
     return Container(
         height: 74,
         child: TextField(
+          onSubmitted: (text) { 
+            setState(() {
+              _idEntered = true;
+            });
+          },
           cursorColor: Colors.black,
           style: notoSansBoldFont(24, Colors.black),
           decoration: InputDecoration(
               suffixIcon: Icon(Icons.check, color: Color.fromRGBO(222, 222, 222, 1),),
-              labelText: 'Enter your id',
+              labelText: placehold,
+              enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
+              focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
+              labelStyle:
+                  notoSansBoldFont(22, Color.fromRGBO(222, 222, 222, 1))),
+        ));
+  }
+
+    Widget _configureInputPW(String placehold, BuildContext context) {
+    return Container(
+        height: 74,
+        child: TextField(
+          obscureText: true,
+          onSubmitted: (text) { 
+            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => WelcomePage()));
+          },
+          cursorColor: Colors.black,
+          style: notoSansBoldFont(24, Colors.black),
+          decoration: InputDecoration(
+              suffixIcon: Icon(Icons.check, color: Color.fromRGBO(222, 222, 222, 1),),
+              labelText: placehold,
               enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
               focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
               labelStyle:
