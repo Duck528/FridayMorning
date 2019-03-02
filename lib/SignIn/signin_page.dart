@@ -53,11 +53,11 @@ class _SignInWidgetState extends State<_SignInWidget> {
         children: <Widget>[
           _LogoWidget(),
           spacing(20.1),
-          _configureMainTitle('ID'),
+          _configureMainTitle('Login'),
           spacing(6),
           _configureSubTitle('Pick id for display you on friday morning.'),
           spacing(15),
-          _configureInputID('Nickname'),
+          _configureInputID('Enter ID'),
           _idEntered ? _configureInputPW('Enter Password', context) : Container()
         ],
       ),
