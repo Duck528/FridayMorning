@@ -103,10 +103,7 @@ class _NestStepWidget extends StatelessWidget {
     return FlatButton(
         highlightColor: Colors.white70,
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) => WelcomePage()));
+          
         },
         child: Stack(children: <Widget>[
           Positioned(
