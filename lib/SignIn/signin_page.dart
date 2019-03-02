@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:friday_morning/SignIn/signin_page_provider.dart';
+import 'package:friday_morning/Util/fonts.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -61,14 +62,15 @@ class _WelcomeWidgetState extends State<_WelcomeWidget> {
   Widget _configureMainTitle(String text) {
     return Container(
       height: 28,
-      child: Text(text, style: TextStyle(color: Colors.black, fontSize: 20)),
+      child: Text(text, style: notoSansBoldFont(20, Colors.black)),
     );
   }
 
   Widget _configureSubTitle(String text) {
     return Container(
       height: 26,
-      child: Text(text, style: TextStyle(color: Colors.black, fontSize: 16)),
+      child: Text(text,
+          style: notoSansRegularFont(16, Color.fromRGBO(102, 102, 102, 1))),
     );
   }
 
@@ -76,11 +78,12 @@ class _WelcomeWidgetState extends State<_WelcomeWidget> {
     return Container(
         height: 74,
         child: TextField(
-          style: TextStyle(fontSize: 25),
+          style: notoSansBoldFont(25, Colors.black),
           decoration: InputDecoration(
               suffixIcon: Icon(Icons.check),
               labelText: 'Enter your id',
-              labelStyle: TextStyle(fontSize: 22)),
+              labelStyle:
+                  notoSansBoldFont(22, Color.fromRGBO(222, 222, 222, 1))),
         ));
   }
 }
@@ -122,16 +125,19 @@ class _NestStepWidget extends StatelessWidget {
   }
 
   Widget _configureNextButton() {
-    return Stack(
-      children: <Widget>[
+    return FlatButton(
+      onPressed: () {
+        print('clicked');
+      },
+      child: Stack(children: <Widget>[
         Positioned(
           top: 16,
           left: 30,
           bottom: 17,
           child: Text(
             'NEXT',
-            style: TextStyle(color: Colors.white, fontSize: 17),
-          ),
+            style: notoSansBoldFont(17, Colors.white),
+          )
         ),
         Positioned(
           top: 16,
@@ -142,13 +148,11 @@ class _NestStepWidget extends StatelessWidget {
             color: Colors.white,
           ),
         )
-      ],
+      ])
     );
   }
 
-  Widget _configureStepIndicator() { 
-    
-  }
+  Widget _configureStepIndicator() {}
 }
 
 Container _spacing(double height) {
