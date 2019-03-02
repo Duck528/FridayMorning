@@ -78,10 +78,13 @@ class _WelcomeWidgetState extends State<_WelcomeWidget> {
     return Container(
         height: 74,
         child: TextField(
-          style: notoSansBoldFont(25, Colors.black),
+          cursorColor: Colors.black,
+          style: notoSansBoldFont(24, Colors.black),
           decoration: InputDecoration(
-              suffixIcon: Icon(Icons.check),
+              suffixIcon: Icon(Icons.check, color: Color.fromRGBO(222, 222, 222, 1),),
               labelText: 'Enter your id',
+              enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
+              focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Color.fromRGBO(222, 222, 222, 1))),
               labelStyle:
                   notoSansBoldFont(22, Color.fromRGBO(222, 222, 222, 1))),
         ));
