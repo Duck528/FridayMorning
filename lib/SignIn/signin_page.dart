@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:friday_morning/SignIn/signin_page_provider.dart';
 import 'package:friday_morning/Util/fonts.dart';
+import 'package:friday_morning/Welcome/welcome_page.dart';
 
 class SignInPage extends StatefulWidget {
   @override
@@ -131,7 +132,7 @@ class _NestStepWidget extends StatelessWidget {
     return FlatButton(
       highlightColor: Colors.white70,
       onPressed: () {
-        
+        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => WelcomePage()));
       },
       child: Stack(children: <Widget>[
         Positioned(
